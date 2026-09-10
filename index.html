@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mulish:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/deck.css?v=17">
+    <link rel="stylesheet" href="css/deck.css?v=19">
     <script>
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
@@ -42,7 +42,6 @@
                 <li><a class="smoothscroll" href="#sostenible">Impacto</a></li>
                 <li><a class="smoothscroll" href="#conclusiones">Cierre</a></li>
             </ul>
-            <a href="#video" class="js-open-video button button-primary cta">Ver video</a>
         </nav>
 
         <a class="header-menu-toggle" href="#"><span>Menu</span></a>
@@ -106,7 +105,7 @@
                 <header class="section-head reveal">
                     <p class="eyebrow green">El proyecto</p>
                     <h2 class="intro-header">Dónde está y cómo funciona</h2>
-                    <p class="section-lead">Tres datos para ubicar la central, y luego el recorrido del agua.</p>
+                    <p class="section-lead">Tres datos y el mapa para ubicar la central, y luego el recorrido del agua.</p>
                 </header>
 
                 <div class="fact-grid">
@@ -125,6 +124,17 @@
                         <h3>Cómo funciona</h3>
                         <p>Un túnel de 12&nbsp;km lleva el agua a una casa de máquinas subterránea y la devuelve limpia.</p>
                     </article>
+                </div>
+
+                <div class="map-pair">
+                    <figure class="map-card reveal">
+                        <img src="images/mapa.png" alt="Ubicación del proyecto: Colombia, departamento del Tolima y municipio de Chaparral.">
+                        <figcaption>Del país al municipio: Colombia, Tolima y Chaparral.</figcaption>
+                    </figure>
+                    <figure class="map-card reveal">
+                        <img src="images/mapa2.png" alt="Ubicación de la Central Hidroeléctrica Río Amoyá en el cañón de Las Hermosas, Chaparral.">
+                        <figcaption>El proyecto en el cañón de Las Hermosas, sobre el río Amoyá.</figcaption>
+                    </figure>
                 </div>
 
                 <div class="photo-pair">
@@ -346,12 +356,18 @@
                     </li>
                 </ol>
 
+                <figure id="video" class="page-video reveal">
+                    <video controls playsinline preload="metadata" poster="images/1ra.webp">
+                        <source src="images/amoya.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>La Central Hidroeléctrica Río Amoyá a filo de agua.</figcaption>
+                </figure>
+
                 <footer class="sources reveal">
                     <h4>Fuentes</h4>
                     <ul>
                         <li><a href="https://cdm.unfccc.int/Projects/DB/ICONTEC1267618553.66/view?cp=1" target="_blank" rel="noopener">Registro MDL · CMNUCC</a></li>
                         <li><a href="https://documents1.worldbank.org/curated/en/246551468019270950/pdf/686960ISDS0COL0Amoya0river0rev.pdf" target="_blank" rel="noopener">ISDS Río Amoyá · Banco Mundial</a></li>
-                        <li><a href="#video" class="js-open-video">Video del proyecto</a></li>
                     </ul>
                     <p class="credit">Diseño basado en <a href="http://www.styleshout.com/">Dazzle / Styleshout</a>.</p>
                 </footer>
@@ -359,15 +375,6 @@
         </section>
 
     </main>
-
-    <div id="video-modal" class="video-modal" hidden>
-        <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Video del proyecto">
-            <button type="button" class="video-modal-close" aria-label="Cerrar video">×</button>
-            <div class="video-modal-frame">
-                <video id="video-modal-player" title="Central Hidroeléctrica Río Amoyá" controls playsinline preload="metadata"></video>
-            </div>
-        </div>
-    </div>
 
     <div id="go-top">
         <a class="smoothscroll" title="Volver arriba" href="#top">↑</a>
@@ -383,6 +390,6 @@
         <span class="preloader-bar"><i></i></span>
     </div>
 
-    <script src="js/main.js?v=11"></script>
+    <script src="js/main.js?v=12"></script>
 </body>
 </html>

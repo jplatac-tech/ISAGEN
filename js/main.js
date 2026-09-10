@@ -10,7 +10,7 @@
   function ssStartAtTop() {
     function toTop() {
       var hash = location.hash;
-      if (hash && hash !== "#video" && hash !== "#top") {
+      if (hash && hash !== "#top") {
         history.replaceState(null, "", location.pathname + location.search);
       }
       window.scrollTo(0, 0);
@@ -24,7 +24,6 @@
   }
 
   var counted = false;
-  var VIDEO_SRC = "images/amoya.mp4";
   var LOOP_START = 40;
   var LOOP_END = 120;
 
@@ -308,88 +307,6 @@
     });
   }
 
-  function ssVideoModal() {
-    var modal = document.getElementById("video-modal");
-    var frame = document.getElementById("video-modal-player");
-    var closeBtn = modal && modal.querySelector(".video-modal-close");
-    if (!modal || !frame) return;
-
-    var openedByUs = false;
-
-    function playModal() {
-      if (frame.getAttribute("src") !== VIDEO_SRC) {
-        frame.src = VIDEO_SRC;
-      }
-      frame.currentTime = 0;
-      var play = frame.play();
-      if (play && play.catch) play.catch(function () {});
-    }
-
-    function openVideo() {
-      modal.hidden = false;
-      modal.classList.add("is-open");
-      document.body.classList.add("is-video-open");
-      playModal();
-      if (!openedByUs) {
-        openedByUs = true;
-        history.pushState({ amoyaVideo: 1 }, "", "#video");
-      }
-    }
-
-    function closeVideo(fromBack) {
-      modal.classList.remove("is-open");
-      document.body.classList.remove("is-video-open");
-      frame.pause();
-      frame.removeAttribute("src");
-      frame.load();
-      window.setTimeout(function () {
-        modal.hidden = true;
-      }, 200);
-      if (!fromBack && openedByUs) {
-        openedByUs = false;
-        if (history.state && history.state.amoyaVideo) history.back();
-      } else {
-        openedByUs = false;
-      }
-    }
-
-    document.querySelectorAll(".js-open-video").forEach(function (btn) {
-      btn.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (!modal.classList.contains("is-open")) openVideo();
-      });
-    });
-
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        closeVideo(false);
-      });
-    }
-
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) closeVideo(false);
-    });
-
-    window.addEventListener("popstate", function () {
-      if (modal.classList.contains("is-open")) closeVideo(true);
-    });
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && modal.classList.contains("is-open")) {
-        closeVideo(false);
-      }
-    });
-
-    if (location.hash === "#video") {
-      openedByUs = true;
-      modal.hidden = false;
-      modal.classList.add("is-open");
-      document.body.classList.add("is-video-open");
-      playModal();
-    }
-  }
-
   function ssCountWhenVisible() {
     var target = document.getElementById("resultados");
     if (!target || !("IntersectionObserver" in window)) return;
@@ -412,6 +329,5 @@
   ssBackToTop();
   ssFlow();
   ssMethod();
-  ssVideoModal();
   ssCountWhenVisible();
 })();
