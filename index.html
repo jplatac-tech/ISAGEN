@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <title>Central Hidroeléctrica Río Amoyá · Proyecto MDL</title>
@@ -10,15 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mulish:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/deck.css">
+    <link rel="stylesheet" href="css/deck.css?v=12">
+    <script>
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    </script>
+    <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/logo.png">
 </head>
 
 <body id="top">
@@ -28,8 +29,7 @@
     <header id="header">
         <div class="header-logo">
             <a href="#introduccion" class="smoothscroll">
-                <span class="logo-mark" aria-hidden="true"></span>
-                Río Amoyá
+                <img class="brand-logo" src="images/logo-nav.png" alt="ISAGEN">
             </a>
         </div>
 
@@ -42,7 +42,7 @@
                 <li><a class="smoothscroll" href="#sostenible">Impacto</a></li>
                 <li><a class="smoothscroll" href="#conclusiones">Cierre</a></li>
             </ul>
-            <a href="https://www.youtube.com/watch?v=1TG_MWuMDSw" data-lity class="button button-primary cta">Ver video</a>
+            <a href="#video" class="js-open-video button button-primary cta">Ver video</a>
         </nav>
 
         <a class="header-menu-toggle" href="#"><span>Menu</span></a>
@@ -51,86 +51,93 @@
     <main>
 
         <section id="introduccion" class="section slide-dark">
-            <div class="slide-bg" aria-hidden="true">
-                <span class="orb orb-a"></span>
-                <span class="orb orb-b"></span>
-                <span class="wave"></span>
-            </div>
-
-            <div class="wrap wide home-split">
-                <div class="home-copy">
-                    <p class="eyebrow" data-aos="fade-up">Energía limpia para Colombia</p>
-                    <h1 data-aos="fade-up">
-                        Central Hidroeléctrica<br>
-                        <em>Río Amoyá</em>
-                    </h1>
-                    <p class="lead" data-aos="fade-up">
-                        El país necesitaba más electricidad renovable en el Sistema Interconectado Nacional
-                        y menos dependencia de plantas térmicas a combustibles fósiles. En Chaparral, al sur
-                        del Tolima, ISAGEN desarrolló una central <strong>a filo de agua</strong> de
-                        <strong>80&nbsp;MW</strong>, pensada para aportar unos <strong>510&nbsp;GWh</strong> al año
-                        sin construir un embalse.
-                    </p>
-
-                    <ul class="stat-row" data-aos="fade-up">
-                        <li>
-                            <strong>80 MW</strong>
-                            <span>Potencia instalada</span>
-                        </li>
-                        <li>
-                            <strong>510 GWh</strong>
-                            <span>Generación media anual</span>
-                        </li>
-                        <li>
-                            <strong>Filo de agua</strong>
-                            <span>Sin presa ni embalse</span>
-                        </li>
-                    </ul>
-
-                    <div class="slide-actions" data-aos="fade-up">
-                        <a href="#caracteristicas" class="button button-primary smoothscroll">Conocer el proyecto</a>
-                        <a href="https://www.youtube.com/watch?v=1TG_MWuMDSw" data-lity class="button stroke">Ver el video</a>
-                    </div>
+            <div class="hero-video" aria-hidden="true">
+                <div class="hero-video-frame">
+                    <iframe
+                        id="hero-player"
+                        width="1920"
+                        height="1080"
+                        src="https://www.youtube.com/embed/1TG_MWuMDSw?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&start=40&loop=1&playlist=1TG_MWuMDSw&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&cc=0"
+                        title="Central Hidroeléctrica Río Amoyá"
+                        allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
                 </div>
+            </div>
+            <div class="hero-overlay"></div>
 
-                <figure class="home-photo" data-aos="fade-left">
-                    <img src="images/1ra.webp" alt="Captación a filo de agua de la Central Hidroeléctrica Río Amoyá, junto al cauce del río.">
-                    <figcaption>Así se ve la central: captación junto al río, sin embalse.</figcaption>
-                </figure>
+            <div class="wrap home-copy">
+                <h1 class="reveal">
+                    Central Hidroeléctrica<br>
+                    <em>Río Amoyá</em>
+                </h1>
+                <p class="lead reveal">
+                    Colombia necesitaba más energía renovable y menos plantas térmicas a fósiles.
+                    ISAGEN respondió en Chaparral, Tolima, con una central <strong>a filo de agua</strong>:
+                    <strong>80&nbsp;MW</strong> y unos <strong>510&nbsp;GWh</strong> al año, sin embalse.
+                </p>
+
+                <ul class="stat-row reveal">
+                    <li>
+                        <strong>80 MW</strong>
+                        <span>Potencia instalada</span>
+                    </li>
+                    <li>
+                        <strong>510 GWh</strong>
+                        <span>Generación media anual</span>
+                    </li>
+                    <li>
+                        <strong>Filo de agua</strong>
+                        <span>Sin presa ni embalse</span>
+                    </li>
+                </ul>
+
+                <div class="slide-actions reveal">
+                    <a href="#caracteristicas" class="button button-primary smoothscroll">Conocer el proyecto</a>
+                </div>
             </div>
 
-            <a href="#caracteristicas" class="slide-hint smoothscroll">
-                <span>Baja para continuar</span>
-                <i></i>
-            </a>
         </section>
 
         <section id="caracteristicas" class="section slide-light">
             <div class="wrap wide">
-                <header class="section-head" data-aos="fade-up">
-                    <p class="eyebrow green">Características generales</p>
-                    <h2 class="intro-header">Dónde está, de qué trata y cómo funciona</h2>
+                <header class="section-head reveal">
+                    <p class="eyebrow green">El proyecto</p>
+                    <h2 class="intro-header">Dónde está y cómo funciona</h2>
+                    <p class="section-lead">Tres datos para ubicar la central, y luego el recorrido del agua.</p>
                 </header>
 
                 <div class="fact-grid">
-                    <article class="fact-card" data-aos="fade-up">
+                    <article class="fact-card reveal">
                         <span class="fact-num">01</span>
                         <h3>Dónde está</h3>
-                        <p>Municipio de Chaparral, al sur del departamento del Tolima. Aprovecha el cauce natural del río Amoyá.</p>
+                        <p>Chaparral, sur del Tolima. Aprovecha el cauce natural del río Amoyá.</p>
                     </article>
-                    <article class="fact-card" data-aos="fade-up" data-aos-delay="120">
+                    <article class="fact-card reveal">
                         <span class="fact-num">02</span>
                         <h3>De qué trata</h3>
-                        <p>Una hidroeléctrica a filo de agua operada por ISAGEN: 80&nbsp;MW de potencia y una generación media anual estimada de 510&nbsp;GWh para el sistema nacional.</p>
+                        <p>Hidroeléctrica a filo de agua de ISAGEN: 80&nbsp;MW y 510&nbsp;GWh al año.</p>
                     </article>
-                    <article class="fact-card" data-aos="fade-up" data-aos-delay="220">
+                    <article class="fact-card reveal">
                         <span class="fact-num">03</span>
                         <h3>Cómo funciona</h3>
-                        <p>Usa la corriente del río. El agua viaja por un túnel de 12&nbsp;km hasta una casa de máquinas subterránea y luego vuelve limpia al cauce.</p>
+                        <p>Un túnel de 12&nbsp;km lleva el agua a una casa de máquinas subterránea y la devuelve limpia.</p>
                     </article>
                 </div>
 
-                <div class="flow" role="tablist" aria-label="Cómo funciona la central" data-aos="fade-up">
+                <div class="photo-pair">
+                    <figure class="plant-photo reveal">
+                        <img src="images/1ra.webp" alt="Canal de captación de la Central Hidroeléctrica Río Amoyá, junto al cauce del río.">
+                        <figcaption>En superficie. Canal de captación, junto al río.</figcaption>
+                    </figure>
+                    <figure class="plant-photo plant-photo-weir reveal">
+                        <img src="images/3ro.webp" alt="Vertedero de la Central Hidroeléctrica Río Amoyá, operada por ISAGEN.">
+                        <figcaption>Obra de derivación sobre el Amoyá. ISAGEN.</figcaption>
+                    </figure>
+                </div>
+
+                <div class="flow reveal" role="tablist" aria-label="Cómo funciona la central">
                     <button type="button" class="flow-step is-active" role="tab" aria-selected="true" data-step="0">
                         <span>1</span>
                         Captación
@@ -149,7 +156,7 @@
                     </button>
                 </div>
 
-                <div class="flow-panel is-active" data-step-panel="0" data-aos="fade-up">
+                <div class="flow-panel is-active reveal" data-step-panel="0">
                     <h4>La corriente, no un embalse</h4>
                     <p>A diferencia de una hidroeléctrica convencional, no necesita presa ni reservorio. Toma el agua del flujo natural del río Amoyá y conserva el caudal ecológico.</p>
                 </div>
@@ -165,50 +172,61 @@
                     <h4>Agua devuelta limpia</h4>
                     <p>El agua usada en la generación se restituye al cauce sin cargarla de sustancias. El río sigue su curso y se preserva el caudal ecológico.</p>
                 </div>
+
+                <div class="photo-pair photo-pair-inside">
+                    <figure class="plant-photo reveal">
+                        <img src="images/5ta.jpg" alt="Casa de máquinas subterránea de la Central Hidroeléctrica Río Amoyá.">
+                        <figcaption>Bajo tierra. Casa de máquinas en operación.</figcaption>
+                    </figure>
+                    <figure class="plant-photo reveal">
+                        <img src="images/6ta.jpg" alt="Caverna de generación de la Central Hidroeléctrica Río Amoyá durante el montaje.">
+                        <figcaption>La caverna de generación, en montaje.</figcaption>
+                    </figure>
+                </div>
+
+                <figure class="scheme-photo reveal">
+                    <img src="images/2da.webp" alt="Esquema de una central hidroeléctrica a filo de agua: captación, canal, tubería de presión, casa de máquinas y retorno al río.">
+                    <figcaption>Esquema a filo de agua: se toma, genera y vuelve. Sin embalse.</figcaption>
+                </figure>
             </div>
         </section>
 
         <section id="mdl" class="section slide-muted">
             <div class="wrap wide">
-                <header class="section-head" data-aos="fade-up">
+                <header class="section-head reveal">
                     <p class="eyebrow green">Mecanismo de Desarrollo Limpio</p>
                     <h2 class="intro-header">¿Por qué es un proyecto MDL?</h2>
+                    <p class="section-lead">Porque produce energía renovable y esa reducción de CO<sub>2</sub> se puede certificar.</p>
                 </header>
 
                 <div class="split">
-                    <div class="split-copy" data-aos="fade-up">
-                        <p class="lead tight">
-                            En 2011, Río Amoyá se convirtió en uno de los proyectos más relevantes del
-                            sector energético colombiano registrados como Mecanismo de Desarrollo Limpio
-                            ante la CMNUCC.
-                        </p>
+                    <div class="split-copy reveal">
                         <p>
-                            Es MDL porque genera electricidad renovable a partir del río, sin carbón ni
-                            petróleo, y esa generación está asociada a una <strong>reducción certificable</strong>
-                            de gases de efecto invernadero. Fue seleccionado bajo las reglas del
-                            Protocolo de Kioto y contempla certificados de reducción de emisiones (CERs),
-                            ligados al financiamiento de carbono del proyecto.
+                            En 2011, Río Amoyá quedó registrado ante la CMNUCC como uno de los proyectos
+                            energéticos más relevantes del país en el Mecanismo de Desarrollo Limpio.
+                            Genera electricidad sin carbón ni petróleo, bajo las reglas del Protocolo de Kioto,
+                            y esa reducción se traduce en certificados (CERs) ligados al financiamiento de carbono.
                         </p>
                     </div>
 
-                    <aside class="quote-card" data-aos="fade-left">
-                        <p>El Banco Mundial estimó un desplazamiento de hasta <strong>1,87 millones</strong> de toneladas de CO<sub>2</sub>e hacia 2012 y <strong>4,56 millones</strong> hacia 2019.</p>
-                        <cite>Documento ISDS · Banco Mundial</cite>
+                    <aside class="quote-card reveal">
+                        <p>Hasta <strong>1,87 millones</strong> de toneladas de CO<sub>2</sub> equivalente a 2012 y <strong>4,56 millones</strong> a 2019.</p>
+                        <cite>Banco Mundial · ISDS</cite>
                     </aside>
                 </div>
 
                 <ol class="reason-list">
-                    <li data-aos="fade-up">
+                    <li class="reveal">
                         <h3>Fuente renovable</h3>
-                        <p>Aprovecha el flujo natural del río. No quema combustibles fósiles para producir electricidad.</p>
+                        <p>Usa el flujo del río. No quema combustibles fósiles.</p>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="120">
+                    <li class="reveal">
                         <h3>Reglas de Kioto</h3>
-                        <p>Cumple los criterios de elegibilidad del MDL: adicionalidad, medición y verificación de reducciones.</p>
+                        <p>Cumple adicionalidad, medición y verificación.</p>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="220">
+                    <li class="reveal">
                         <h3>CERs</h3>
-                        <p>Las reducciones se traducen en certificados de carbono que respaldan el financiamiento climático del proyecto.</p>
+                        <p>Las reducciones se certifican y respaldan el carbono del proyecto.</p>
                     </li>
                 </ol>
             </div>
@@ -216,36 +234,37 @@
 
         <section id="resultados" class="section slide-light">
             <div class="wrap wide">
-                <header class="section-head" data-aos="fade-up">
-                    <p class="eyebrow green">Resultados ambientales</p>
-                    <h2 class="intro-header">Cuánto CO<sub>2</sub> evita y cómo se calcula</h2>
+                <header class="section-head reveal">
+                    <p class="eyebrow green">Resultados</p>
+                    <h2 class="intro-header">Cuánto CO<sub>2</sub> evita</h2>
+                    <p class="section-lead">La cifra anual y las proyecciones se calculan con la metodología MDL ACM0002.</p>
                 </header>
 
-                <div class="result-hero" data-aos="zoom-in">
+                <div class="result-hero reveal">
                     <p class="result-kicker">Ahorro estimado al año</p>
                     <p class="result-number">
                         <span class="js-count" data-target="176643">0</span>
-                        <small>tCO<sub>2</sub>e / año</small>
+                        <small>toneladas de CO<sub>2</sub> equivalente al año</small>
                     </p>
                     <p class="result-note">Registrado como proyecto MDL ante la CMNUCC.</p>
                 </div>
 
                 <div class="result-grid">
-                    <article class="metric-card" data-aos="fade-up">
+                    <article class="metric-card reveal">
                         <strong class="js-count" data-target="1.87" data-decimals="2">0</strong>
-                        <span>millones de tCO<sub>2</sub>e proyectadas a 2012</span>
+                        <span>millones de toneladas de CO<sub>2</sub> equivalente a 2012</span>
                     </article>
-                    <article class="metric-card accent" data-aos="fade-up" data-aos-delay="120">
+                    <article class="metric-card accent reveal">
                         <strong class="js-count" data-target="4.56" data-decimals="2">0</strong>
-                        <span>millones de tCO<sub>2</sub>e proyectadas a 2019</span>
+                        <span>millones de toneladas de CO<sub>2</sub> equivalente a 2019</span>
                     </article>
-                    <article class="metric-card" data-aos="fade-up" data-aos-delay="220">
+                    <article class="metric-card reveal">
                         <strong>ACM0002</strong>
-                        <span>Metodología consolidada MDL para renovables conectadas a la red</span>
+                        <span>Metodología MDL para renovables en red</span>
                     </article>
                 </div>
 
-                <div class="method" data-aos="fade-up">
+                <div class="method reveal">
                     <button type="button" class="method-toggle is-open" aria-expanded="true">
                         Cómo se calculan las reducciones
                         <i></i>
@@ -269,56 +288,63 @@
 
         <section id="sostenible" class="section slide-green">
             <div class="wrap wide">
-                <header class="section-head on-green" data-aos="fade-up">
-                    <p class="eyebrow">Contribución al desarrollo sostenible</p>
-                    <h2 class="intro-header">Impactos que ya se pueden afirmar… y los que faltan</h2>
+                <header class="section-head on-green reveal">
+                    <p class="eyebrow">Desarrollo sostenible</p>
+                    <h2 class="intro-header">Impacto ambiental, y lo que falta</h2>
+                    <p class="section-lead">Hoy se puede afirmar el cuidado del paisaje y del río. El impacto social se complementará.</p>
                 </header>
 
-                <div class="impact-grid">
-                    <article class="impact-card" data-aos="fade-up">
-                        <h3>Paisaje</h3>
-                        <p>El túnel de conducción y la casa de máquinas subterránea buscan minimizar la alteración visible del territorio.</p>
-                    </article>
-                    <article class="impact-card" data-aos="fade-up" data-aos-delay="120">
-                        <h3>Río</h3>
-                        <p>El agua se devuelve limpia al cauce y se preserva el caudal ecológico del Amoyá.</p>
-                    </article>
-                    <article class="impact-card is-pending" data-aos="fade-up" data-aos-delay="220">
-                        <h3>Impactos sociales</h3>
-                        <p>Esta capa —empleo, comunidad y territorio— se complementará cuando esté la información de soporte.</p>
-                    </article>
+                <div class="people-split">
+                    <figure class="people-photo reveal">
+                        <img src="images/4ta.jpg" alt="Personal de ISAGEN en la Central Hidroeléctrica Río Amoyá.">
+                        <figcaption>Equipo de ISAGEN en la central.</figcaption>
+                    </figure>
+                    <div class="impact-grid">
+                        <article class="impact-card reveal">
+                            <h3>Paisaje</h3>
+                            <p>El túnel y la casa de máquinas subterránea reducen la huella visible en el territorio.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Río</h3>
+                            <p>El agua vuelve limpia al cauce y se mantiene el caudal ecológico.</p>
+                        </article>
+                        <article class="impact-card is-pending reveal">
+                            <h3>Impactos sociales</h3>
+                            <p>Empleo, comunidad y territorio: se añadirá con la información de soporte.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="conclusiones" class="section slide-dark slide-end">
             <div class="wrap wide">
-                <header class="section-head on-dark" data-aos="fade-up">
+                <header class="section-head on-dark reveal">
                     <p class="eyebrow">Cierre</p>
-                    <h2 class="intro-header">Lo que deja el proyecto, en tres ideas</h2>
+                    <h2 class="intro-header">Tres ideas para llevar</h2>
                 </header>
 
                 <ol class="close-list">
-                    <li data-aos="fade-up">
-                        <h3>Responde a un problema de país</h3>
-                        <p>Suma energía renovable al sistema nacional y desplaza generación térmica a fósiles.</p>
+                    <li class="reveal">
+                        <h3>Un problema de país</h3>
+                        <p>Suma energía renovable al sistema y desplaza generación térmica a fósiles.</p>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="120">
-                        <h3>Es hidroelectricidad de bajo perfil territorial</h3>
-                        <p>A filo de agua, sin embalse, con obras principalmente subterráneas y restitución del caudal.</p>
+                    <li class="reveal">
+                        <h3>Bajo perfil territorial</h3>
+                        <p>A filo de agua, sin embalse, con obras subterráneas y restitución del caudal.</p>
                     </li>
-                    <li data-aos="fade-up" data-aos-delay="220">
-                        <h3>La reducción de CO<sub>2</sub> es medible</h3>
-                        <p>El registro MDL y la metodología ACM0002 convierten esa generación en reducciones verificables: unas 176.643 tCO<sub>2</sub>e cada año.</p>
+                    <li class="reveal">
+                        <h3>CO<sub>2</sub> medible</h3>
+                        <p>El MDL y ACM0002 certifican unas 176.643 toneladas de CO<sub>2</sub> equivalente evitadas cada año.</p>
                     </li>
                 </ol>
 
-                <footer class="sources" data-aos="fade-up">
+                <footer class="sources reveal">
                     <h4>Fuentes</h4>
                     <ul>
                         <li><a href="https://cdm.unfccc.int/Projects/DB/ICONTEC1267618553.66/view?cp=1" target="_blank" rel="noopener">Registro MDL · CMNUCC</a></li>
                         <li><a href="https://documents1.worldbank.org/curated/en/246551468019270950/pdf/686960ISDS0COL0Amoya0river0rev.pdf" target="_blank" rel="noopener">ISDS Río Amoyá · Banco Mundial</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=1TG_MWuMDSw" data-lity>Video del proyecto</a></li>
+                        <li><a href="#video" class="js-open-video">Video del proyecto</a></li>
                     </ul>
                     <p class="credit">Diseño basado en <a href="http://www.styleshout.com/">Dazzle / Styleshout</a>.</p>
                 </footer>
@@ -327,16 +353,29 @@
 
     </main>
 
+    <div id="video-modal" class="video-modal" hidden>
+        <div class="video-modal-panel" role="dialog" aria-modal="true" aria-label="Video del proyecto">
+            <button type="button" class="video-modal-close" aria-label="Cerrar video">×</button>
+            <div class="video-modal-frame">
+                <iframe id="video-modal-player" title="Central Hidroeléctrica Río Amoyá" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div id="go-top">
         <a class="smoothscroll" title="Volver arriba" href="#top">↑</a>
     </div>
 
-    <div id="preloader">
-        <div id="loader"></div>
+    <div id="preloader" aria-hidden="true">
+        <div class="preloader-mark">
+            <span class="preloader-drop"></span>
+            <span class="preloader-ring"></span>
+            <span class="preloader-ring delay"></span>
+        </div>
+        <p class="preloader-name">Río Amoyá</p>
+        <span class="preloader-bar"><i></i></span>
     </div>
 
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=8"></script>
 </body>
 </html>
