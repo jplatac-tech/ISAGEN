@@ -23,7 +23,7 @@
     window.addEventListener("load", toTop);
   }
 
-  var counted = false;
+  var countersStarted = false;
 
   function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -37,16 +37,17 @@
   }
 
   function animateCounters() {
-    if (counted) return;
     var nodes = document.querySelectorAll("#resultados .js-count");
-    if (!nodes.length) return;
-    counted = true;
+    if (!nodes.length || countersStarted) return;
+    countersStarted = true;
 
     nodes.forEach(function (node) {
-      var target = parseFloat(node.getAttribute("data-target"), 10);
+      var target = parseFloat(node.getAttribute("data-target"));
       var decimals = parseInt(node.getAttribute("data-decimals"), 10) || 0;
+      if (isNaN(target)) return;
+
       var start = performance.now();
-      var duration = 1400;
+      var duration = 2200;
 
       function tick(now) {
         var t = Math.min((now - start) / duration, 1);
@@ -63,28 +64,72 @@
     var video = document.getElementById("hero-player");
     if (!video) return;
 
+    var START = 40;
+    var END = 60;
+
     video.controls = false;
     video.removeAttribute("controls");
+    video.removeAttribute("poster");
     video.muted = true;
-    video.loop = true;
+    video.defaultMuted = true;
+    video.loop = false;
     video.playsInline = true;
+    video.preload = "auto";
 
-    if (prefersReducedMotion()) {
-      video.removeAttribute("autoplay");
-      video.pause();
-      return;
+    function clampClip() {
+      if (video.readyState < 1) return;
+      if (video.currentTime < START || video.currentTime >= END - 0.08) {
+        try {
+          video.currentTime = START;
+        } catch (err) {}
+      }
     }
 
-    function playSilent() {
+    function markReady() {
+      if (video.currentTime >= START - 0.25) {
+        var wrap = document.querySelector(".hero-video");
+        if (wrap) wrap.classList.add("is-ready");
+      }
+    }
+
+    function playClip() {
       video.muted = true;
       video.controls = false;
+      clampClip();
       var play = video.play();
       if (play && play.catch) play.catch(function () {});
     }
 
-    video.addEventListener("loadeddata", playSilent);
-    video.addEventListener("canplay", playSilent);
-    playSilent();
+    video.addEventListener("loadedmetadata", function () {
+      clampClip();
+      playClip();
+    });
+    video.addEventListener("canplay", playClip);
+    video.addEventListener("playing", markReady);
+    video.addEventListener("seeked", markReady);
+    video.addEventListener("timeupdate", function () {
+      markReady();
+      if (video.currentTime >= END) {
+        try {
+          video.currentTime = START;
+        } catch (err) {}
+        playClip();
+      }
+    });
+    video.addEventListener("ended", function () {
+      try {
+        video.currentTime = START;
+      } catch (err) {}
+      playClip();
+    });
+    video.addEventListener("seeked", function () {
+      if (video.paused) playClip();
+    });
+
+    document.addEventListener("click", playClip, { once: true });
+    document.addEventListener("touchstart", playClip, { once: true, passive: true });
+
+    if (!prefersReducedMotion()) playClip();
   }
 
   function ssScrollReveal() {
@@ -244,7 +289,13 @@
         }
       });
 
-      if (current.id === "resultados") animateCounters();
+      var results = document.querySelector("#resultados .result-hero");
+      if (results) {
+        var box = results.getBoundingClientRect();
+        if (box.top < window.innerHeight * 0.82 && box.bottom > 90) {
+          animateCounters();
+        }
+      }
     }
 
     window.addEventListener("scroll", update, { passive: true });
@@ -303,14 +354,25 @@
   }
 
   function ssCountWhenVisible() {
-    var target = document.getElementById("resultados");
-    if (!target || !("IntersectionObserver" in window)) return;
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) animateCounters();
-      });
-    }, { threshold: 0.35 });
-    observer.observe(target);
+    var target = document.querySelector("#resultados .result-hero") || document.getElementById("resultados");
+    if (!target) return;
+
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) animateCounters();
+        });
+      }, { threshold: 0.25 });
+      observer.observe(target);
+      return;
+    }
+
+    function fallback() {
+      var box = target.getBoundingClientRect();
+      if (box.top < window.innerHeight * 0.82 && box.bottom > 90) animateCounters();
+    }
+    window.addEventListener("scroll", fallback, { passive: true });
+    fallback();
   }
 
   ssStartAtTop();
