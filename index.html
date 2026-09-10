@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Mulish:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/deck.css?v=19">
+    <link rel="stylesheet" href="css/deck.css?v=22">
     <script>
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
@@ -58,7 +58,9 @@
                         muted
                         loop
                         playsinline
-                        preload="metadata"
+                        disablepictureinpicture
+                        controlslist="nodownload nofullscreen noremoteplayback"
+                        preload="auto"
                         poster="images/1ra.webp"
                     >
                         <source src="images/amoya.mp4" type="video/mp4">
@@ -73,9 +75,10 @@
                     <em>Río Amoyá</em>
                 </h1>
                 <p class="lead reveal">
-                    Colombia necesitaba más energía renovable y menos plantas térmicas a fósiles.
-                    ISAGEN respondió en Chaparral, Tolima, con una central <strong>a filo de agua</strong>:
-                    <strong>80&nbsp;MW</strong> y unos <strong>510&nbsp;GWh</strong> al año, sin embalse.
+                    La Central Hidroeléctrica Río Amoyá a filo de agua (<strong>80&nbsp;MW</strong>),
+                    desarrollada por ISAGEN en Chaparral, Tolima, genera energía limpia
+                    aprovechando la corriente natural del río, con infraestructura subterránea
+                    y <strong>sin un gran embalse</strong>.
                 </p>
 
                 <ul class="stat-row reveal">
@@ -84,12 +87,12 @@
                         <span>Potencia instalada</span>
                     </li>
                     <li>
-                        <strong>510 GWh</strong>
-                        <span>Generación media anual</span>
+                        <strong>1999</strong>
+                        <span>Licencia ambiental</span>
                     </li>
                     <li>
-                        <strong>Filo de agua</strong>
-                        <span>Sin presa ni embalse</span>
+                        <strong>2011</strong>
+                        <span>Registro MDL ante la ONU</span>
                     </li>
                 </ul>
 
@@ -98,31 +101,46 @@
                 </div>
             </div>
 
+            <div class="wrap intro-context">
+                <p class="eyebrow reveal">El contexto</p>
+                <p class="reveal">
+                    Su ejecución enfrentó un complejo contexto de orden público en el cañón de Las Hermosas
+                    por la presencia armada de las FARC: combates, minas antipersona, ráfagas de fusil que
+                    interrumpieron reuniones de socialización y restricciones de seguridad que impidieron
+                    evaluaciones de campo durante años.
+                </p>
+                <p class="reveal">
+                    Aunque obtuvo su licencia ambiental en 1999 y el permiso de construcción en 2000,
+                    las obras civiles avanzaron en medio del conflicto hacia 2008. El proyecto se concretó
+                    y quedó registrado ante la ONU, bajo el Mecanismo de Desarrollo Limpio, en 2011.
+                </p>
+            </div>
+
         </section>
 
         <section id="caracteristicas" class="section slide-light">
             <div class="wrap wide">
                 <header class="section-head reveal">
                     <p class="eyebrow green">El proyecto</p>
-                    <h2 class="intro-header">Dónde está y cómo funciona</h2>
-                    <p class="section-lead">Tres datos y el mapa para ubicar la central, y luego el recorrido del agua.</p>
+                    <h2 class="intro-header">Características generales</h2>
+                    <p class="section-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dónde está, de qué trata y cómo funciona.</p>
                 </header>
 
                 <div class="fact-grid">
                     <article class="fact-card reveal">
                         <span class="fact-num">01</span>
                         <h3>Dónde está</h3>
-                        <p>Chaparral, sur del Tolima. Aprovecha el cauce natural del río Amoyá.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus.</p>
                     </article>
                     <article class="fact-card reveal">
                         <span class="fact-num">02</span>
                         <h3>De qué trata</h3>
-                        <p>Hidroeléctrica a filo de agua de ISAGEN: 80&nbsp;MW y 510&nbsp;GWh al año.</p>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
                     </article>
                     <article class="fact-card reveal">
                         <span class="fact-num">03</span>
                         <h3>Cómo funciona</h3>
-                        <p>Un túnel de 12&nbsp;km lleva el agua a una casa de máquinas subterránea y la devuelve limpia.</p>
+                        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
                     </article>
                 </div>
 
@@ -134,17 +152,6 @@
                     <figure class="map-card reveal">
                         <img src="images/mapa2.png" alt="Ubicación de la Central Hidroeléctrica Río Amoyá en el cañón de Las Hermosas, Chaparral.">
                         <figcaption>El proyecto en el cañón de Las Hermosas, sobre el río Amoyá.</figcaption>
-                    </figure>
-                </div>
-
-                <div class="photo-pair">
-                    <figure class="plant-photo reveal">
-                        <img src="images/1ra.webp" alt="Canal de captación de la Central Hidroeléctrica Río Amoyá, junto al cauce del río.">
-                        <figcaption>En superficie. Canal de captación, junto al río.</figcaption>
-                    </figure>
-                    <figure class="plant-photo plant-photo-weir reveal">
-                        <img src="images/3ro.webp" alt="Vertedero de la Central Hidroeléctrica Río Amoyá, operada por ISAGEN.">
-                        <figcaption>Obra de derivación sobre el Amoyá. ISAGEN.</figcaption>
                     </figure>
                 </div>
 
@@ -168,31 +175,20 @@
                 </div>
 
                 <div class="flow-panel is-active reveal" data-step-panel="0">
-                    <h4>La corriente, no un embalse</h4>
-                    <p>A diferencia de una hidroeléctrica convencional, no necesita presa ni reservorio. Toma el agua del flujo natural del río Amoyá y conserva el caudal ecológico.</p>
+                    <h4>Lorem ipsum</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
                 </div>
                 <div class="flow-panel" data-step-panel="1">
-                    <h4>Conducción subterránea</h4>
-                    <p>Un túnel de 12&nbsp;km lleva el agua hacia la central. Esa decisión reduce la alteración del paisaje en superficie.</p>
+                    <h4>Dolor sit amet</h4>
+                    <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla.</p>
                 </div>
                 <div class="flow-panel" data-step-panel="2">
-                    <h4>Generación bajo tierra</h4>
-                    <p>La casa de máquinas está construida de forma subterránea. Allí la caída del agua se convierte en electricidad para el Sistema Interconectado Nacional.</p>
+                    <h4>Consectetur elit</h4>
+                    <p>Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
                 </div>
                 <div class="flow-panel" data-step-panel="3">
-                    <h4>Agua devuelta limpia</h4>
-                    <p>El agua usada en la generación se restituye al cauce sin cargarla de sustancias. El río sigue su curso y se preserva el caudal ecológico.</p>
-                </div>
-
-                <div class="photo-pair photo-pair-inside">
-                    <figure class="plant-photo reveal">
-                        <img src="images/5ta.jpg" alt="Casa de máquinas subterránea de la Central Hidroeléctrica Río Amoyá.">
-                        <figcaption>Bajo tierra. Casa de máquinas en operación.</figcaption>
-                    </figure>
-                    <figure class="plant-photo reveal">
-                        <img src="images/6ta.jpg" alt="Caverna de generación de la Central Hidroeléctrica Río Amoyá durante el montaje.">
-                        <figcaption>La caverna de generación, en montaje.</figcaption>
-                    </figure>
+                    <h4>Adipiscing elit</h4>
+                    <p>Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur.</p>
                 </div>
 
                 <figure class="scheme-photo reveal">
@@ -213,33 +209,50 @@
                 <div class="split">
                     <div class="split-copy reveal">
                         <p>
-                            En 2011, Río Amoyá quedó registrado ante la CMNUCC como uno de los proyectos
-                            energéticos más relevantes del país en el Mecanismo de Desarrollo Limpio.
-                            Genera electricidad sin carbón ni petróleo, bajo las reglas del Protocolo de Kioto,
-                            y esa reducción se traduce en certificados (CERs) ligados al financiamiento de carbono.
+                            En 2011, el proyecto hidroeléctrico del río Amoyá se convirtió en uno de los más
+                            importantes del sector energético nacional registrados como Mecanismo de Desarrollo Limpio.
+                            Su sistema produce energía a partir de una fuente renovable, aprovechando el flujo
+                            natural del río, sin carbón ni petróleo.
+                        </p>
+                        <p>
+                            De acuerdo con el Banco Mundial, se estimaba que el proyecto permitiría desplazar
+                            aproximadamente 1,87 millones de toneladas de CO<sub>2</sub> equivalente hasta 2012
+                            y 4,56 millones hasta 2019. Por esa reducción se contempló la generación de CERs,
+                            certificados ligados al financiamiento de carbono del proyecto.
                         </p>
                     </div>
 
                     <aside class="quote-card reveal">
                         <p>Hasta <strong>1,87 millones</strong> de toneladas de CO<sub>2</sub> equivalente a 2012 y <strong>4,56 millones</strong> a 2019.</p>
-                        <cite>Banco Mundial · ISDS</cite>
+                        <cite>Banco Mundial</cite>
                     </aside>
                 </div>
 
                 <ol class="reason-list">
                     <li class="reveal">
                         <h3>Fuente renovable</h3>
-                        <p>Usa el flujo del río. No quema combustibles fósiles.</p>
+                        <p>Aprovecha el flujo natural del río. No depende de combustibles fósiles.</p>
                     </li>
                     <li class="reveal">
                         <h3>Reglas de Kioto</h3>
-                        <p>Cumple adicionalidad, medición y verificación.</p>
+                        <p>Fue seleccionado bajo las reglas de elegibilidad del MDL del Protocolo de Kioto.</p>
                     </li>
                     <li class="reveal">
                         <h3>CERs</h3>
-                        <p>Las reducciones se certifican y respaldan el carbono del proyecto.</p>
+                        <p>La reducción certificable se traduce en certificados ligados al financiamiento de carbono.</p>
                     </li>
                 </ol>
+
+                <div class="photo-pair">
+                    <figure class="plant-photo reveal">
+                        <img src="images/1ra.webp" alt="Canal de captación de la Central Hidroeléctrica Río Amoyá, junto al cauce del río.">
+                        <figcaption>Captación a filo de agua: el río sigue su curso.</figcaption>
+                    </figure>
+                    <figure class="plant-photo plant-photo-weir reveal">
+                        <img src="images/3ro.webp" alt="Vertedero de la Central Hidroeléctrica Río Amoyá, operada por ISAGEN.">
+                        <figcaption>Obra de derivación. Energía limpia, sin combustión.</figcaption>
+                    </figure>
+                </div>
             </div>
         </section>
 
@@ -248,16 +261,16 @@
                 <header class="section-head reveal">
                     <p class="eyebrow green">Resultados</p>
                     <h2 class="intro-header">Cuánto CO<sub>2</sub> evita</h2>
-                    <p class="section-lead">La cifra anual y las proyecciones se calculan con la metodología MDL ACM0002.</p>
+                    <p class="section-lead">La iniciativa está registrada ante la CMNUCC. Las reducciones se calculan con la metodología MDL ACM0002.</p>
                 </header>
 
                 <div class="result-hero reveal">
                     <p class="result-kicker">Ahorro estimado al año</p>
                     <p class="result-number">
                         <span class="js-count" data-target="176643">0</span>
-                        <small>toneladas de CO<sub>2</sub> equivalente al año</small>
+                        <small>toneladas métricas de CO<sub>2</sub> equivalente al año</small>
                     </p>
-                    <p class="result-note">Registrado como proyecto MDL ante la CMNUCC.</p>
+                    <p class="result-note">Registrado bajo el Mecanismo de Desarrollo Limpio de la CMNUCC.</p>
                 </div>
 
                 <div class="result-grid">
@@ -284,16 +297,21 @@
                         <div class="compare">
                             <div class="compare-col">
                                 <h4>Línea de base</h4>
-                                <p>Se estima el CO<sub>2</sub> que habrían liberado las plantas térmicas a combustibles fósiles para entregar la misma energía al sistema.</p>
+                                <p>ACM0002 estima el volumen de gases de efecto invernadero que habrían liberado las plantas térmicas a fósiles para entregar esa misma energía al sistema.</p>
                             </div>
                             <div class="compare-vs" aria-hidden="true">vs</div>
                             <div class="compare-col">
                                 <h4>Generación Amoyá</h4>
-                                <p>La central produce esa electricidad de forma renovable y libre de emisiones de combustión. La diferencia es la reducción certificable.</p>
+                                <p>Se compara con la producción renovable y libre de emisiones de la central. La diferencia es la reducción certificable.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <figure class="spot-photo reveal">
+                    <img src="images/5ta.jpg" alt="Casa de máquinas subterránea de la Central Hidroeléctrica Río Amoyá.">
+                    <figcaption>Casa de máquinas bajo tierra: genera sin quemar fósiles.</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -301,30 +319,75 @@
             <div class="wrap wide">
                 <header class="section-head on-green reveal">
                     <p class="eyebrow">Desarrollo sostenible</p>
-                    <h2 class="intro-header">Impacto ambiental, y lo que falta</h2>
-                    <p class="section-lead">Hoy se puede afirmar el cuidado del paisaje y del río. El impacto social se complementará.</p>
+                    <h2 class="intro-header">Contribución al desarrollo sostenible</h2>
+                    <p class="section-lead">Impactos ambientales y sociales del proyecto en el territorio.</p>
                 </header>
 
-                <div class="people-split">
-                    <figure class="people-photo reveal">
-                        <img src="images/4ta.jpg" alt="Personal de ISAGEN en la Central Hidroeléctrica Río Amoyá.">
-                        <figcaption>Equipo de ISAGEN en la central.</figcaption>
-                    </figure>
+                <figure class="people-photo reveal">
+                    <img src="images/4ta.jpg" alt="Personal de ISAGEN en la Central Hidroeléctrica Río Amoyá.">
+                    <figcaption>Equipo de ISAGEN en la central.</figcaption>
+                </figure>
+
+                <div class="impact-block">
+                    <h3 class="impact-label reveal">Impactos ambientales</h3>
                     <div class="impact-grid">
                         <article class="impact-card reveal">
-                            <h3>Paisaje</h3>
-                            <p>El túnel y la casa de máquinas subterránea reducen la huella visible en el territorio.</p>
+                            <h3>Energía renovable</h3>
+                            <p>Genera 80&nbsp;MW y contribuye a reducir las emisiones de gases de efecto invernadero.</p>
                         </article>
                         <article class="impact-card reveal">
-                            <h3>Río</h3>
-                            <p>El agua vuelve limpia al cauce y se mantiene el caudal ecológico.</p>
+                            <h3>Filo de agua</h3>
+                            <p>No requiere un gran embalse. Gran parte de la infraestructura es subterránea y reduce la intervención visual del paisaje.</p>
                         </article>
-                        <article class="impact-card is-pending reveal">
-                            <h3>Impactos sociales</h3>
-                            <p>Empleo, comunidad y territorio: se añadirá con la información de soporte.</p>
+                        <article class="impact-card reveal">
+                            <h3>Caudal ecológico</h3>
+                            <p>Se garantiza un mínimo de 1&nbsp;m³/s en el Amoyá, que aumenta hasta superar los 17&nbsp;m³/s. El agua se monitorea en 7 puntos del río.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Monitoreo ambiental</h3>
+                            <p>Se hicieron seguimientos a peces, algas y otros organismos del río.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Compensación</h3>
+                            <p>Hubo reforestación por la intervención de vegetación durante la construcción.</p>
                         </article>
                     </div>
                 </div>
+
+                <div class="impact-block">
+                    <h3 class="impact-label reveal">Impactos sociales</h3>
+                    <div class="impact-grid">
+                        <article class="impact-card reveal">
+                            <h3>Empleo</h3>
+                            <p>Se priorizó la contratación de trabajadores y proveedores de la región.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Inversión social</h3>
+                            <p>Parte de los ingresos por créditos de carbono se destinó a programas comunitarios.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Educación</h3>
+                            <p>Apoyo mediante becas y paquetes escolares.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Infraestructura</h3>
+                            <p>Construcción y mejoramiento de acueductos, vías, puentes y centros de salud.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Comunidades indígenas</h3>
+                            <p>Apoyo a cuatro comunidades indígenas para su reconocimiento legal.</p>
+                        </article>
+                        <article class="impact-card reveal">
+                            <h3>Reasentamiento</h3>
+                            <p>Cinco familias fueron reubicadas y recibieron compensación y acompañamiento.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <figure class="spot-photo reveal">
+                    <img src="images/6ta.jpg" alt="Caverna de generación de la Central Hidroeléctrica Río Amoyá durante el montaje.">
+                    <figcaption>La caverna de generación reduce la huella en el paisaje.</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -357,7 +420,7 @@
                 </ol>
 
                 <figure id="video" class="page-video reveal">
-                    <video controls playsinline preload="metadata" poster="images/1ra.webp">
+                    <video controls playsinline preload="none" poster="images/1ra.webp">
                         <source src="images/amoya.mp4" type="video/mp4">
                     </video>
                     <figcaption>La Central Hidroeléctrica Río Amoyá a filo de agua.</figcaption>
@@ -390,6 +453,6 @@
         <span class="preloader-bar"><i></i></span>
     </div>
 
-    <script src="js/main.js?v=12"></script>
+    <script src="js/main.js?v=13"></script>
 </body>
 </html>

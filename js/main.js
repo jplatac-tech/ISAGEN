@@ -24,8 +24,6 @@
   }
 
   var counted = false;
-  var LOOP_START = 40;
-  var LOOP_END = 120;
 
   function prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -65,31 +63,28 @@
     var video = document.getElementById("hero-player");
     if (!video) return;
 
+    video.controls = false;
+    video.removeAttribute("controls");
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
     if (prefersReducedMotion()) {
       video.removeAttribute("autoplay");
       video.pause();
       return;
     }
 
-    function playFromStart() {
-      try {
-        video.muted = true;
-        if (video.currentTime < LOOP_START || video.currentTime >= LOOP_END) {
-          video.currentTime = LOOP_START;
-        }
-        var play = video.play();
-        if (play && play.catch) play.catch(function () {});
-      } catch (err) {}
+    function playSilent() {
+      video.muted = true;
+      video.controls = false;
+      var play = video.play();
+      if (play && play.catch) play.catch(function () {});
     }
 
-    video.addEventListener("loadedmetadata", playFromStart);
-    video.addEventListener("timeupdate", function () {
-      if (video.currentTime >= LOOP_END) {
-        video.currentTime = LOOP_START;
-      }
-    });
-    video.addEventListener("ended", playFromStart);
-    playFromStart();
+    video.addEventListener("loadeddata", playSilent);
+    video.addEventListener("canplay", playSilent);
+    playSilent();
   }
 
   function ssScrollReveal() {
