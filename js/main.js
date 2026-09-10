@@ -86,9 +86,39 @@
   function bindHeroPlayer() {
     if (prefersReducedMotion()) return;
     if (!window.YT || !window.YT.Player) return;
-    if (!document.getElementById("hero-player")) return;
+    var mount = document.getElementById("hero-player");
+    if (!mount || mount.dataset.bound === "1") return;
+    mount.dataset.bound = "1";
+
+    if (mount.tagName === "IFRAME") {
+      var host = document.createElement("div");
+      host.id = "hero-player";
+      host.dataset.bound = "1";
+      mount.parentNode.replaceChild(host, mount);
+    }
 
     new window.YT.Player("hero-player", {
+      width: "1920",
+      height: "1080",
+      videoId: "1TG_MWuMDSw",
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        rel: 0,
+        modestbranding: 1,
+        playsinline: 1,
+        start: LOOP_START,
+        loop: 1,
+        playlist: "1TG_MWuMDSw",
+        iv_load_policy: 3,
+        disablekb: 1,
+        fs: 0,
+        cc_load_policy: 0,
+        showinfo: 0,
+        enablejsapi: 1,
+        origin: window.location.origin
+      },
       events: {
         onReady: function (event) {
           try {
@@ -96,6 +126,7 @@
             event.target.unloadModule("cc");
           } catch (err) {}
           event.target.mute();
+          event.target.setVolume(0);
           event.target.seekTo(LOOP_START, true);
           event.target.playVideo();
           watchLoop(event.target);
@@ -225,7 +256,7 @@
 
     nav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        if (window.innerWidth <= 900) close();
+        if (window.innerWidth <= 1080) close();
       });
     });
   }
